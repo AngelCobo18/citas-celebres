@@ -12,22 +12,25 @@
 </head>
 <body>
 
-    <header>
-        <h1>Citas Célebres</h1>
-        <p id="cita-del-dia"></p>
+    <!-- ================= HEADER DE NAVEGACIÓN ================= -->
+    <header class="nav-header">
+        <div class="nav-container">
+            <h1 class="logo">CITAS CÉLEBRES</h1>
+            <nav class="menu">
+                <button onclick="mostrarInicio()">Inicio</button>
+                <button onclick="mostrarAutores()">Autores</button>
+                <button onclick="mostrarObras()">Libros</button>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <div class="buscador-card">
-            <input type="text" id="buscador" placeholder="Buscar citas por palabras..." oninput="buscar()">
-        </div>
+    <!-- ================= CITA DEL DÍA ================= -->
+    <section class="cita-dia">
+        <h2 id="cita-texto">Cita del día</h2>
+        <p id="cita-autor"></p>
+    </section>
 
-        <div class="botones">
-            <button onclick="mostrarAutores()">Autores</button>
-            <button onclick="mostrarObras()">Obras</button>
-        </div>
-    </nav>
-
+    <!-- ================= CONTENIDO PRINCIPAL ================= -->
     <main id="contenido"></main>
 
     <footer>
