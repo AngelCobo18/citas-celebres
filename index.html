@@ -46,5 +46,21 @@
     </footer>
 
     <script src="script.js"></script>
+    <header class="nav-header">
+    <div class="nav-container">
+        <h1 class="logo" onclick="mostrarInicio()">CITAS CÉLEBRES</h1>
+        <nav class="menu">
+            <button onclick="mostrarInicio()">Inicio</button>
+            <button onclick="mostrarAutores()">Autores</button>
+            <button onclick="mostrarObras()">Libros</button>
+            <button onclick="mostrarTemas()">Temas</button>
+        </nav>
+        <div class="buscador-header">
+            <input type="text" id="buscador-header" placeholder="Buscar citas..." oninput="buscarHeader()">
+        </div>
+    </div>
+</header>
+
 </body>
 </html>
+
