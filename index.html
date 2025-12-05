@@ -22,11 +22,29 @@
                 <button onclick="mostrarObras()">Libros</button>
             </nav>
             <div class="buscador-header">
-                <input type="text" id="buscador-header" placehol
+                <input type="text" id="buscador-header" placeholder="Buscar citas..." oninput="buscarHeader()">
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= CITA DEL DÍA ================= -->
+    <section class="cita-dia">
+        <h2 id="cita-texto">Cita del día</h2>
+        <p id="cita-autor"></p>
+    </section>
+
+    <!-- ================= BUSCADOR PRINCIPAL ================= -->
+    <section class="buscador-principal">
+        <input type="text" id="buscador" placeholder="Buscar citas..." oninput="buscar()">
+    </section>
+
+    <!-- ================= CONTENIDO INICIO ================= -->
+    <main id="contenido"></main>
 
     <footer>
         <p>© 2025 Citas Célebres • Ángel Bitrián</p>
     </footer>
 
-  
-
+    <script src="script.js"></script>
+</body>
+</html>
