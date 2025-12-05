@@ -23,6 +23,8 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .logo {
@@ -31,19 +33,36 @@ body {
     letter-spacing: 2px;
 }
 
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
 .menu button {
     background: none;
     border: none;
     color: #DEDEDE;
     font-weight: 900;
     font-size: 16px;
-    margin-left: 15px;
     cursor: pointer;
     transition: color 0.3s;
 }
 
 .menu button:hover {
-    color: #D4AF37; /* detalles dorados al pasar el mouse */
+    color: #D4AF37;
+}
+
+/* Buscador en header */
+.buscador-header input {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 2px solid #D4AF37;
+    outline: none;
+    width: 180px;
+}
+
+.buscador-header input:focus {
+    box-shadow: 0 0 8px #740B1E;
 }
 
 /* =======================
@@ -69,6 +88,28 @@ body {
 }
 
 /* =======================
+   BUSCADOR PRINCIPAL
+======================= */
+.buscador-principal {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.buscador-principal input {
+    width: 80%;
+    max-width: 500px;
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #D4AF37;
+    outline: none;
+}
+
+.buscador-principal input:focus {
+    box-shadow: 0 0 8px #740B1E;
+}
+
+/* =======================
    MAIN CONTENT
 ======================= */
 main {
@@ -77,7 +118,40 @@ main {
     padding: 0 20px;
 }
 
-/* Citas */
+.section-destacados h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #1E1E1E;
+    text-transform: uppercase;
+}
+
+.destacados-list {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.destacados-list div {
+    background: #B7B7B7;
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    flex: 1 1 150px;
+    text-align: center;
+    transition: all 0.3s;
+    font-weight: 900;
+}
+
+.destacados-list div:hover {
+    background: #8C001A;
+    color: #DEDEDE;
+    transform: translateY(-3px);
+}
+
+/* =======================
+   Citas
+======================= */
 .cita {
     background: #DEDEDE;
     padding: 20px;
@@ -122,5 +196,6 @@ footer {
     .logo { font-size: 24px; }
     .cita-dia h2 { font-size: 24px; }
     .cita-dia p { font-size: 20px; }
-    .menu button { font-size: 14px; margin-left: 10px; }
+    .menu button { font-size: 14px; margin-left: 5px; }
+    .buscador-header input { width: 120px; }
 }
