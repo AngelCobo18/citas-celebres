@@ -4,16 +4,16 @@
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background: #DEDEDE; /* fondo base */
-    color: #1E1E1E;
+    background: #D9EAD5; /* fondo base */
+    color: #173523; /* texto general */
 }
 
 /* =======================
    HEADER NAVEGACIÓN
 ======================= */
 .nav-header {
-    background-color: #8C001A; /* rectángulo superior */
-    color: #DEDEDE;
+    background-color: #2A523C; /* rectángulo superior */
+    color: #D9EAD5;
     padding: 15px 20px;
 }
 
@@ -31,6 +31,7 @@ body {
     font-size: 28px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 
 .menu {
@@ -41,7 +42,7 @@ body {
 .menu button {
     background: none;
     border: none;
-    color: #DEDEDE;
+    color: #D9EAD5;
     font-weight: 900;
     font-size: 16px;
     cursor: pointer;
@@ -49,20 +50,20 @@ body {
 }
 
 .menu button:hover {
-    color: #D4AF37;
+    color: #B7D9C6;
 }
 
 /* Buscador en header */
 .buscador-header input {
     padding: 8px 12px;
     border-radius: 8px;
-    border: 2px solid #D4AF37;
+    border: 2px solid #B7D9C6;
     outline: none;
     width: 180px;
 }
 
 .buscador-header input:focus {
-    box-shadow: 0 0 8px #740B1E;
+    box-shadow: 0 0 8px #173523;
 }
 
 /* =======================
@@ -71,19 +72,19 @@ body {
 .cita-dia {
     text-align: center;
     padding: 40px 20px;
-    background: #DEDEDE;
+    background: #D9EAD5;
 }
 
 .cita-dia h2 {
     font-size: 32px;
     text-transform: uppercase;
-    color: #1E1E1E;
+    color: #173523;
     margin-bottom: 10px;
 }
 
 .cita-dia p {
     font-size: 22px;
-    color: #740B1E;
+    color: #2A523C;
     margin-top: 5px;
 }
 
@@ -101,12 +102,12 @@ body {
     padding: 12px 15px;
     font-size: 16px;
     border-radius: 8px;
-    border: 2px solid #D4AF37;
+    border: 2px solid #B7D9C6;
     outline: none;
 }
 
 .buscador-principal input:focus {
-    box-shadow: 0 0 8px #740B1E;
+    box-shadow: 0 0 8px #173523;
 }
 
 /* =======================
@@ -121,7 +122,7 @@ main {
 .section-destacados h3 {
     font-size: 24px;
     margin-bottom: 15px;
-    color: #1E1E1E;
+    color: #173523;
     text-transform: uppercase;
 }
 
@@ -133,7 +134,7 @@ main {
 }
 
 .destacados-list div {
-    background: #B7B7B7;
+    background: #B7D9C6;
     padding: 15px;
     border-radius: 12px;
     cursor: pointer;
@@ -141,11 +142,12 @@ main {
     text-align: center;
     transition: all 0.3s;
     font-weight: 900;
+    color: #173523;
 }
 
 .destacados-list div:hover {
-    background: #8C001A;
-    color: #DEDEDE;
+    background: #173523;
+    color: #D9EAD5;
     transform: translateY(-3px);
 }
 
@@ -153,11 +155,11 @@ main {
    Citas
 ======================= */
 .cita {
-    background: #DEDEDE;
+    background: #D9EAD5;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 12px;
-    border-left: 5px solid #D4AF37;
+    border-left: 5px solid #B7D9C6;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     line-height: 1.6;
@@ -166,13 +168,13 @@ main {
 
 .cita:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 .cita small {
     display: block;
     margin-top: 10px;
-    color: #8C001A;
+    color: #173523;
     font-size: 14px;
 }
 
@@ -183,10 +185,10 @@ footer {
     text-align: center;
     padding: 20px;
     font-size: 14px;
-    color: #1E1E1E;
-    background: #B7B7B7;
+    color: #173523;
+    background: #B7D9C6;
     margin-top: 40px;
-    border-top: 2px solid #D4AF37;
+    border-top: 2px solid #173523;
 }
 
 /* =======================
