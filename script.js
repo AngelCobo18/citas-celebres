@@ -448,34 +448,10 @@ function verTema(nombreTema) {
     const resultados = citas.filter(c => c.temas && c.temas.includes(nombreTema));
     mostrarResultados(resultados, `Citas del tema "${nombreTema}"`);
 }
-function mostrarInicioDestacados() {
-    const cont = document.getElementById("contenido");
-    
-    const autoresPorVisitas = [...new Set(citas.map(c => c.autor))].slice(0,5);
-    const obrasPorVisitas = [...new Set(citas.map(c => c.obra))].filter(o => o!=="").slice(0,5);
-    const temasPorFrecuencia = [...new Set(citas.flatMap(c => c.temas || []))].slice(0,5);
-
-    let html = `<section class="section-destacados">
-        <h3>Libros Destacados</h3>
-        <div class="destacados-list">`;
-    obrasPorVisitas.forEach(o => html += `<div onclick="verObra('${o}')">${o}</div>`);
-    html += `</div>`;
-
-    html += `<h3>Personajes Destacados</h3>
-        <div class="destacados-list">`;
-    autoresPorVisitas.forEach(a => html += `<div onclick="verAutor('${a}')">${a}</div>`);
-    html += `</div>`;
-
-    html += `<h3>Temas Populares</h3>
-        <div class="destacados-list">`;
-    temasPorFrecuencia.forEach(t => html += `<div onclick="verTema('${t}')">${t}</div>`);
-    html += `</div></section>`;
-
-    cont.innerHTML = html;
-}
 
 // ================= INICIO AUTOMÁTICO =================
 citaDelDia();
+
 
 
 
