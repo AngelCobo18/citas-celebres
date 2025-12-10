@@ -36,60 +36,54 @@ const citas = [
     {texto: "Pero un hombre inteligente se ve obligado a emborracharse algunas veces para poder pasar el tiempo con los imbéciles.", autor: "Ernest Hemingway", obra: "Por quién doblan las campanas"}
 ];
 
-/* =======================
-     CITA DEL DÍA ROTATIVA
-   ======================= */
+/* ============================
+      CITA DEL DÍA (VERSIÓN BUENA)
+   ============================ */
 
-// Mezcla aleatoriamente un array (algoritmo Fisher–Yates)
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-}
-
-// Devuelve la cita del día
 function getQuoteOfTheDay() {
     const today = new Date().toDateString();
 
-    // Si ya se mostró una cita hoy, úsala
     const storedDate = localStorage.getItem("quoteDate");
     const storedQuote = localStorage.getItem("quoteOfTheDay");
 
+    // Si ya hay una cita guardada hoy, devolverla
     if (storedDate === today && storedQuote) {
         return JSON.parse(storedQuote);
     }
 
-    // Obtener cita aleatoria sin repetir demasiado
+    // Cola global si está vacía
     if (!window.quoteQueue || window.quoteQueue.length === 0) {
-        // Clonar todas las citas y mezclarlas
         window.quoteQueue = shuffle([...citas]);
     }
 
-    // Elegir la siguiente cita de la cola
-    const nextQuote = window.quoteQueue.pop();
+    // Elegir una nueva cita
+    let nextQuote = window.quoteQueue.pop();
 
-    // Guardarla para hoy
+    // Evitar repetir el mismo autor de ayer
+    if (storedQuote) {
+        const prev = JSON.parse(storedQuote);
+        if (prev.autor === nextQuote.autor && window.quoteQueue.length > 0) {
+            nextQuote = window.quoteQueue.pop();
+        }
+    }
+
+    // Guardar en localStorage
     localStorage.setItem("quoteDate", today);
     localStorage.setItem("quoteOfTheDay", JSON.stringify(nextQuote));
 
     return nextQuote;
 }
 
-// Mostrar en pantalla
 function renderQuoteOfTheDay() {
     const quote = getQuoteOfTheDay();
-    const container = document.getElementById("quote-of-day");
 
-    container.innerHTML = `
-        <h2 class="titulo-cita-dia">CITA DEL DÍA</h2>
-        <p class="texto-cita">"${quote.text}"</p>
-        <p class="autor-cita">— ${quote.author} (${quote.book})</p>
-    `;
+    document.getElementById("cita-texto").innerText = `"${quote.texto}"`;
+    document.getElementById("cita-autor").innerText =
+        `— ${quote.autor}${quote.obra ? ", " + quote.obra : ""}`;
 }
 
 document.addEventListener("DOMContentLoaded", renderQuoteOfTheDay);
+
 
 
 // ===========================
@@ -297,6 +291,7 @@ function mostrarInicioDestacados() {
 
 // ================= INICIO AUTOMÁTICO =================
 citaDelDia();
+
 
 
 
