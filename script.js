@@ -161,30 +161,37 @@ const citas = [
     }
 ];
 
-/* ============================
-      CITA DEL DÍA (VERSIÓN BUENA)
-   ============================ */
+// ===========================
+// UTILIDADES
+// ===========================
 
+// Mezclar array
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// ===========================
+// CITA DEL DÍA
+// ===========================
 function getQuoteOfTheDay() {
     const today = new Date().toDateString();
-
     const storedDate = localStorage.getItem("quoteDate");
     const storedQuote = localStorage.getItem("quoteOfTheDay");
 
-    // Si ya hay una cita guardada hoy, devolverla
     if (storedDate === today && storedQuote) {
         return JSON.parse(storedQuote);
     }
 
-    // Cola global si está vacía
     if (!window.quoteQueue || window.quoteQueue.length === 0) {
         window.quoteQueue = shuffle([...citas]);
     }
 
-    // Elegir una nueva cita
     let nextQuote = window.quoteQueue.pop();
 
-    // Evitar repetir el mismo autor de ayer
     if (storedQuote) {
         const prev = JSON.parse(storedQuote);
         if (prev.autor === nextQuote.autor && window.quoteQueue.length > 0) {
@@ -192,35 +199,26 @@ function getQuoteOfTheDay() {
         }
     }
 
-    // Guardar en localStorage
     localStorage.setItem("quoteDate", today);
     localStorage.setItem("quoteOfTheDay", JSON.stringify(nextQuote));
-
     return nextQuote;
 }
 
 function renderQuoteOfTheDay() {
     const quote = getQuoteOfTheDay();
-
     document.getElementById("cita-texto").innerText = `"${quote.texto}"`;
     document.getElementById("cita-autor").innerText =
         `— ${quote.autor}${quote.obra ? ", " + quote.obra : ""}`;
 }
 
-document.addEventListener("DOMContentLoaded", renderQuoteOfTheDay);
-
-
-
 // ===========================
-// FUNCIONES PRINCIPALES
+// MOSTRAR RESULTADOS
 // ===========================
-
-// Mostrar resultados
 function mostrarResultados(lista, titulo = "") {
     const cont = document.getElementById("contenido");
     cont.innerHTML = titulo ? `<h2>${titulo}</h2>` : "";
 
-    if(lista.length === 0){
+    if (lista.length === 0) {
         cont.innerHTML += "<p>No se encontraron resultados.</p>";
         return;
     }
@@ -236,78 +234,25 @@ function mostrarResultados(lista, titulo = "") {
 }
 
 // ===========================
-// BUSCADOR LIVE
+// BUSCADOR
 // ===========================
-function buscar() {
-    const q = document.getElementById("buscador").value.toLowerCase();
-
-    if(q === ""){
-        document.getElementById("contenido").innerHTML = "";
+function buscarGenerico(q) {
+    const cont = document.getElementById("contenido");
+    if (q === "") {
+        cont.innerHTML = "";
         return;
     }
 
-    const resultados = citas.filter(c => 
-        c.texto.toLowerCase().includes(q) || 
+    const resultados = citas.filter(c =>
+        c.texto.toLowerCase().includes(q) ||
         c.autor.toLowerCase().includes(q) ||
-        c.obra.toLowerCase().includes(q)
+        c.obra.toLowerCase().includes(q) ||
+        (c.temas && c.temas.some(t => t.toLowerCase().includes(q)))
     );
 
     mostrarResultados(resultados, `Resultados para "${q}"`);
 }
 
-// ===========================
-// AUTORES Y OBRAS
-// ===========================
-function mostrarAutores() {
-    const autores = [...new Set(citas.map(c => c.autor))].sort();
-    const cont = document.getElementById("contenido");
-    cont.innerHTML = "<h2>Autores</h2>";
-
-    autores.forEach(a => {
-        cont.innerHTML += `<p class="link" onclick="verAutor('${a}')">${a}</p>`;
-    });
-}
-
-function verAutor(nombre) {
-    const resultados = citas.filter(c => c.autor === nombre);
-    mostrarResultados(resultados, `Citas de ${nombre}`);
-}
-
-function mostrarObras() {
-    const obras = [...new Set(citas.map(c => c.obra))].filter(o => o !== "").sort();
-    const cont = document.getElementById("contenido");
-    cont.innerHTML = "<h2>Libros</h2>";
-
-    obras.forEach(o => {
-        cont.innerHTML += `<p class="link" onclick="verObra('${o}')">${o}</p>`;
-    });
-}
-
-function verObra(titulo) {
-    const resultados = citas.filter(c => c.obra === titulo);
-    mostrarResultados(resultados, `Citas de "${titulo}"`);
-}
-
-// ===========================
-// INICIO
-// ===========================
-function mostrarInicio() {
-    citaDelDia();
-    document.getElementById("contenido").innerHTML = "";
-}
-// Función para mostrar cita del día
-function citaDelDia() {
-    const hoy = new Date().getDate();
-    const index = hoy % citas.length;
-    const cita = citas[index];
-
-    document.getElementById("cita-texto").innerText = `"${cita.texto}"`;
-    document.getElementById("cita-autor").innerText = `— ${cita.autor}${cita.obra ? ', ' + cita.obra : ''}`;
-
-    mostrarInicioDestacados();
-}
-
-// ================= BUSCADOR =================
 function buscar() {
     const q = document.getElementById("buscador").value.toLowerCase();
     buscarGenerico(q);
@@ -318,56 +263,9 @@ function buscarHeader() {
     buscarGenerico(q);
 }
 
-function buscarGenerico(q) {
-    const cont = document.getElementById("contenido");
-    if(q === ""){
-        cont.innerHTML = "";
-        return;
-    }
-    const resultados = citas.filter(c => 
-        c.texto.toLowerCase().includes(q) || 
-        c.autor.toLowerCase().includes(q) ||
-        c.obra.toLowerCase().includes(q)
-    );
-    mostrarResultados(resultados, `Resultados para "${q}"`);
-    function buscarGenerico(q) {
-    const cont = document.getElementById("contenido");
-    if(q === ""){
-        cont.innerHTML = "";
-        return;
-    }
-
-    const resultados = citas.filter(c => 
-        c.texto.toLowerCase().includes(q) || 
-        c.autor.toLowerCase().includes(q) ||
-        c.obra.toLowerCase().includes(q) ||
-        (c.temas && c.temas.some(t => t.toLowerCase().includes(q)))
-    );
-
-    mostrarResultados(resultados, `Resultados para "${q}"`);
-}
-
-// ================= MOSTRAR RESULTADOS =================
-function mostrarResultados(lista, titulo = "") {
-    const cont = document.getElementById("contenido");
-    cont.innerHTML = titulo ? `<h2>${titulo}</h2>` : "";
-
-    if(lista.length === 0){
-        cont.innerHTML += "<p>No se encontraron resultados.</p>";
-        return;
-    }
-
-    lista.forEach(c => {
-        cont.innerHTML += `
-            <div class="cita">
-                "${c.texto}"<br>
-                <small>${c.autor}${c.obra ? ' — ' + c.obra : ''}</small>
-            </div>
-        `;
-    });
-}
-
-// ================= AUTORES Y LIBROS =================
+// ===========================
+// AUTORES Y OBRAS
+// ===========================
 function mostrarAutores() {
     const autores = [...new Set(citas.map(c => c.autor))].sort();
     const cont = document.getElementById("contenido");
@@ -396,42 +294,36 @@ function verObra(titulo) {
     mostrarResultados(resultados, `Citas de "${titulo}"`);
 }
 
-// ================= INICIO =================
+// ===========================
+// TEMAS
+// ===========================
+function mostrarTemas() {
+    const cont = document.getElementById("contenido");
+    cont.innerHTML = "<h2>Temas</h2>";
+    const temas = [...new Set(citas.flatMap(c => c.temas || []))].sort();
+    temas.forEach(t => {
+        cont.innerHTML += `<p class="link" onclick="verTema('${t}')">${t}</p>`;
+    });
+}
+
+function verTema(nombreTema) {
+    const resultados = citas.filter(c => c.temas && c.temas.includes(nombreTema));
+    mostrarResultados(resultados, `Citas del tema "${nombreTema}"`);
+}
+
+// ===========================
+// INICIO Y DESTACADOS
+// ===========================
 function mostrarInicio() {
-    citaDelDia();
-    document.getElementById("contenido").innerHTML = "";
+    renderQuoteOfTheDay();
     mostrarInicioDestacados();
 }
 
-// ================= DESTACADOS =================
 function mostrarInicioDestacados() {
     const cont = document.getElementById("contenido");
-    
-    // Simular visitas: para demo, ordenamos por autor y obra al azar
+
     const autoresPorVisitas = [...new Set(citas.map(c => c.autor))].slice(0,5);
-    const obrasPorVisitas = [...new Set(citas.map(c => c.obra))].filter(o => o!=="").slice(0,5);
-
-    let html = `<section class="section-destacados">
-        <h3>Libros Destacados</h3>
-        <div class="destacados-list">`;
-    obrasPorVisitas.forEach(o => {
-        html += `<div onclick="verObra('${o}')">${o}</div>`;
-    });
-    html += `</div>`;
-
-    html += `<h3>Personajes Destacados</h3>
-        <div class="destacados-list">`;
-    autoresPorVisitas.forEach(a => {
-        html += `<div onclick="verAutor('${a}')">${a}</div>`;
-    });
-    html += `</div></section>`;
-
-    cont.innerHTML = html;
-function mostrarInicioDestacados() {
-    const cont = document.getElementById("contenido");
-    
-    const autoresPorVisitas = [...new Set(citas.map(c => c.autor))].slice(0,5);
-    const obrasPorVisitas = [...new Set(citas.map(c => c.obra))].filter(o => o!=="").slice(0,5);
+    const obrasPorVisitas = [...new Set(citas.map(c => c.obra))].filter(o => o !== "").slice(0,5);
     const temasPorFrecuencia = [...new Set(citas.flatMap(c => c.temas || []))].slice(0,5);
 
     let html = `<section class="section-destacados">
@@ -452,29 +344,11 @@ function mostrarInicioDestacados() {
 
     cont.innerHTML = html;
 }
+
 // ===========================
-// TEMAS
+// INICIO AUTOMÁTICO
 // ===========================
-function mostrarTemas() {
-    const cont = document.getElementById("contenido");
-    cont.innerHTML = "<h2>Temas</h2>";
-
-    // Extraer todos los temas únicos
-    const temas = [...new Set(citas.flatMap(c => c.temas || []))].sort();
-
-    temas.forEach(t => {
-        cont.innerHTML += `<p class="link" onclick="verTema('${t}')">${t}</p>`;
-    });
-}
-
-function verTema(nombreTema) {
-    // Filtrar citas que contengan el tema
-    const resultados = citas.filter(c => c.temas && c.temas.includes(nombreTema));
-    mostrarResultados(resultados, `Citas del tema "${nombreTema}"`);
-}
-
-// ================= INICIO AUTOMÁTICO =================
-citaDelDia();
+document.addEventListener("DOMContentLoaded", mostrarInicio);
 
 
 
