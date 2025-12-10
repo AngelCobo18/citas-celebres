@@ -144,7 +144,7 @@ const citas = [
         autor: "Ernest Hemingway",
         obra: "Por quién doblan las campanas",
         temas: ["Humor","Ironía","Sarcasmo","Desilusión","Alcohol","Adicción"]
-    }
+    },
     {
         texto: "No hay un anciano que olvide dónde escondió su tesoro.",
         autor: "Cicerón",
@@ -346,6 +346,7 @@ function mostrarInicioDestacados() {
 // INICIO AUTOMÁTICO
 // ===========================
 document.addEventListener("DOMContentLoaded", mostrarInicio);
+
 
 
 
