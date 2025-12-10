@@ -1,6 +1,9 @@
 // ===========================
 // BASE DE DATOS DE CITAS
 // ===========================
+// ===========================
+// BASE DE DATOS DE CITAS CON TEMAS REVISADOS
+// ===========================
 const citas = [
     // --------------------- DEFREDS ---------------------
     {
@@ -37,7 +40,7 @@ const citas = [
         texto: "Si te mirara a los ojos una vez más, no me atrevería a decir nada, quizá te abrazaría. O lloraría, no lo sé.",
         autor: "Defreds",
         obra: "Casi sin querer",
-        temas: ["Amor","Tristeza","Vulnerabilidad","Deseo","Amistad"]
+        temas: ["Amor","Tristeza","Deseo","Amistad"]
     },
     {
         texto: "Que, aunque tú no lo sabías, yo en el fondo te esperaba.",
@@ -120,6 +123,20 @@ const citas = [
         temas: ["Soledad","Muerte","Tristeza","Desesperación","Dolor"]
     },
 
+    // --------------------- Cicerón / Julio César ---------------------
+    {
+        texto: "No hay un anciano que olvide dónde escondió su tesoro.",
+        autor: "Cicerón",
+        obra: "",
+        temas: ["Vejez","Recuerdo","Memoria","Tiempo","Sabiduría"]
+    },
+    {
+        texto: "Es imposible no terminar siendo como los otros creen que uno es.",
+        autor: "Julio César",
+        obra: "",
+        temas: ["Identidad","Cambio","Transformación","Percepción","Sociedad"]
+    },
+
     // --------------------- HEMINGWAY ---------------------
     {
         texto: "Pensó que aburrimiento era una palabra que ningún campesino del mundo usaría en ninguna otra lengua. Y sin embargo, es la palabra más corriente en boca de un español de cualquier clase.",
@@ -144,18 +161,7 @@ const citas = [
         autor: "Ernest Hemingway",
         obra: "Por quién doblan las campanas",
         temas: ["Humor","Ironía","Sarcasmo","Desilusión","Alcohol","Adicción"]
-    },
-    {
-        texto: "No hay un anciano que olvide dónde escondió su tesoro.",
-        autor: "Cicerón",
-        obra: "",
-        temas: ["Vejez","Recuerdo","Memoria","Tiempo","Sabiduría"]
-    },
-    {
-        texto: "Es imposible no terminar siendo como los otros creen que uno es.",
-        autor: "Julio César",
-        obra: "",
-        temas: ["Identidad","Cambio","Transformación","Percepción","Sociedad"]
+    }
 ];
 
 // ===========================
@@ -346,6 +352,7 @@ function mostrarInicioDestacados() {
 // INICIO AUTOMÁTICO
 // ===========================
 document.addEventListener("DOMContentLoaded", mostrarInicio);
+
 
 
 
