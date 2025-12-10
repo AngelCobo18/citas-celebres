@@ -19,19 +19,19 @@ const citas = [
         texto: "Te odio, te quiero.",
         autor: "Defreds",
         obra: "Casi sin querer",
-        temas: ["amor tóxico","amor", "odio", "confusión", "dualidad"]
+        temas: ["amor tóxico","amor", "odio", "confusión", "dualidad","desamor"]
     },
     {
         texto: "Esa persona que da igual el tiempo que pase, da igual dónde vivas y con quién. Esa que recuerdas en cualquier lugar inesperado. Y que solo con recordarla eres capaz de temblar.",
         autor: "Defreds",
         obra: "Casi sin querer",
-        temas: ["recuerdos","amor","nostalgia","temblor emocional"]
+        temas: ["amor","desamor","nostalgia","destino","memoria"]
     },
     {
         texto: "Habla mucho. Justo lo que calla es lo que no se puede saber.",
         autor: "Defreds",
         obra: "Casi sin querer",
-        temas: ["silencio","misterio","verdad oculta"]
+        temas: ["silencio","comunicación","secreto"]
     },
     {
         texto: "Si te mirara a los ojos una vez más, no me atrevería a decir nada, quizá te abrazaría. O lloraría, no lo sé.",
@@ -330,6 +330,21 @@ function buscarGenerico(q) {
         c.obra.toLowerCase().includes(q)
     );
     mostrarResultados(resultados, `Resultados para "${q}"`);
+    function buscarGenerico(q) {
+    const cont = document.getElementById("contenido");
+    if(q === ""){
+        cont.innerHTML = "";
+        return;
+    }
+
+    const resultados = citas.filter(c => 
+        c.texto.toLowerCase().includes(q) || 
+        c.autor.toLowerCase().includes(q) ||
+        c.obra.toLowerCase().includes(q) ||
+        (c.temas && c.temas.some(t => t.toLowerCase().includes(q)))
+    );
+
+    mostrarResultados(resultados, `Resultados para "${q}"`);
 }
 
 // ================= MOSTRAR RESULTADOS =================
@@ -413,9 +428,55 @@ function mostrarInicioDestacados() {
 
     cont.innerHTML = html;
 }
+// ===========================
+// TEMAS
+// ===========================
+function mostrarTemas() {
+    const cont = document.getElementById("contenido");
+    cont.innerHTML = "<h2>Temas</h2>";
+
+    // Extraer todos los temas únicos
+    const temas = [...new Set(citas.flatMap(c => c.temas || []))].sort();
+
+    temas.forEach(t => {
+        cont.innerHTML += `<p class="link" onclick="verTema('${t}')">${t}</p>`;
+    });
+}
+
+function verTema(nombreTema) {
+    // Filtrar citas que contengan el tema
+    const resultados = citas.filter(c => c.temas && c.temas.includes(nombreTema));
+    mostrarResultados(resultados, `Citas del tema "${nombreTema}"`);
+}
+function mostrarInicioDestacados() {
+    const cont = document.getElementById("contenido");
+    
+    const autoresPorVisitas = [...new Set(citas.map(c => c.autor))].slice(0,5);
+    const obrasPorVisitas = [...new Set(citas.map(c => c.obra))].filter(o => o!=="").slice(0,5);
+    const temasPorFrecuencia = [...new Set(citas.flatMap(c => c.temas || []))].slice(0,5);
+
+    let html = `<section class="section-destacados">
+        <h3>Libros Destacados</h3>
+        <div class="destacados-list">`;
+    obrasPorVisitas.forEach(o => html += `<div onclick="verObra('${o}')">${o}</div>`);
+    html += `</div>`;
+
+    html += `<h3>Personajes Destacados</h3>
+        <div class="destacados-list">`;
+    autoresPorVisitas.forEach(a => html += `<div onclick="verAutor('${a}')">${a}</div>`);
+    html += `</div>`;
+
+    html += `<h3>Temas Populares</h3>
+        <div class="destacados-list">`;
+    temasPorFrecuencia.forEach(t => html += `<div onclick="verTema('${t}')">${t}</div>`);
+    html += `</div></section>`;
+
+    cont.innerHTML = html;
+}
 
 // ================= INICIO AUTOMÁTICO =================
 citaDelDia();
+
 
 
 
