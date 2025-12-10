@@ -87,7 +87,7 @@ const citas = [
 
     // --------------------- GABRIEL GARCÍA MÁRQUEZ ---------------------
     {
-        texto: "No hay un anciano que olvide dónde escondió su tesoro.",
+        texto: "No hay un anciano que olvide dónde escondió su tesoro.(Atribuida a Cicerón)",
         autor: "Gabriel García Márquez",
         obra: "Memoria de mis putas tristes",
         temas: ["Memoria","Vejez","Recuerdo","Tiempo","Vida"]
@@ -111,7 +111,7 @@ const citas = [
         temas: ["Celos","Verdad","Odio","Envidia","Desilusión"]
     },
     {
-        texto: "Es imposible no terminar siendo como los otros creen que uno es.",
+        texto: "Es imposible no terminar siendo como los otros creen que uno es. (Atribuida a Julio César)",
         autor: "Gabriel García Márquez",
         obra: "Memoria de mis putas tristes",
         temas: ["Identidad","Cambio","Transformación"]
@@ -352,6 +352,7 @@ function mostrarInicioDestacados() {
 // INICIO AUTOMÁTICO
 // ===========================
 document.addEventListener("DOMContentLoaded", mostrarInicio);
+
 
 
 
