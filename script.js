@@ -3,37 +3,164 @@
 // ===========================
 const citas = [
     // --------------------- DEFREDS ---------------------
-    {texto: "Por el día sobrevivía a base de amigos y poesía. Pero cada noche era una agonía. Deseaba que no llegara nunca, para no tener que tumbarme y pensar en su melena.", autor: "Defreds", obra: "Casi sin querer", temas: ["soledad","dependencia emocional","nostalgia","amor","amistad","tristeza","miedo","noche"] },
-    {texto: "Como llorar sin ganas. Como follar sin ansias. Como la vida sin ti.", autor: "Defreds", obra: "Casi sin querer",temas: ["tristeza", "vacío", "desamor", "rutina","deseo frustrado","deseo"]},
-    {texto: "Te odio, te quiero.", autor: "Defreds", obra: "Casi sin querer",temas: ["amor tóxico","amor", "odio", "confusión", "dualidad"},
-    {texto: "Esa persona que da igual el tiempo que pase, da igual dónde vivas y con quién. Esa que recuerdas en cualquier lugar inesperado. Y que solo con recordarla eres capaz de temblar.", autor: "Defreds", obra: "Casi sin querer",},
-    {texto: "Habla mucho. Justo lo que calla es lo que no se puede saber.", autor: "Defreds", obra: "Casi sin querer"},
-    {texto: "Si te mirara a los ojos una vez más, no me atrevería a decir nada, quizá te abrazaría. O lloraría, no lo sé.", autor: "Defreds", obra: "Casi sin querer"},
-    {texto: "Que, aunque tú no lo sabías, yo en el fondo te esperaba.", autor: "Defreds", obra: "Casi sin querer"},
-    {texto: "Pero he de confesarte que nunca he disfrutado tanto como entre tus brazos: ese fue mi viaje preferido.", autor: "Defreds", obra: "Casi sin querer"},
-    {texto: "Ver que ese desconocido, en algún momento, fue tu mayor conocido. Y sobretodo, saber que dos personas que se recuerdan cuando ni hablan son capaces de todo.", autor: "Defreds", obra: "Casi sin querer"},
-    {texto: "Y aunque no lo creas, sus silencios dicen más que el resto del mundo a gritos.", autor: "Defreds", obra: "Casi sin querer"},
-    {texto: "Respiro. Pero ya no vivo...", autor: "Defreds", obra: "Casi sin querer"},
-    {texto: "Algunas veces recuerda aquello que pudo ser y dejó pasar por miedo.", autor: "Defreds", obra: "Casi sin querer"},
-    {texto: "Y ahora quiero un billete para huir de recuerdos. Y sale demasiado caro. Dicen que está agotado.", autor: "Defreds", obra: "Casi sin querer"},
+   const citas = [
+    // --------------------- DEFREDS ---------------------
+    {
+        texto: "Por el día sobrevivía a base de amigos y poesía. Pero cada noche era una agonía. Deseaba que no llegara nunca, para no tener que tumbarme y pensar en su melena.",
+        autor: "Defreds",
+        obra: "Casi sin querer",
+        temas: ["soledad","dependencia emocional","nostalgia","amor","amistad","tristeza","miedo","noche"]
+    },
+    {
+        texto: "Como llorar sin ganas. Como follar sin ansias. Como la vida sin ti.",
+        autor: "Defreds",
+        obra: "Casi sin querer",
+        temas: ["tristeza", "vacío", "desamor", "rutina","deseo frustrado","deseo"]
+    },
+    {
+        texto: "Te odio, te quiero.",
+        autor: "Defreds",
+        obra: "Casi sin querer",
+        temas: ["amor tóxico","amor", "odio", "confusión", "dualidad"]
+    },
+    {
+        texto: "Esa persona que da igual el tiempo que pase, da igual dónde vivas y con quién. Esa que recuerdas en cualquier lugar inesperado. Y que solo con recordarla eres capaz de temblar.",
+        autor: "Defreds",
+        obra: "Casi sin querer",
+        temas: ["recuerdos","amor","nostalgia","temblor emocional"]
+    },
+    {
+        texto: "Habla mucho. Justo lo que calla es lo que no se puede saber.",
+        autor: "Defreds",
+        obra: "Casi sin querer",
+        temas: ["silencio","misterio","verdad oculta"]
+    },
+    {
+        texto: "Si te mirara a los ojos una vez más, no me atrevería a decir nada, quizá te abrazaría. O lloraría, no lo sé.",
+        autor: "Defreds",
+        obra: "Casi sin querer",
+        temas: ["amor","fragilidad","vulnerabilidad","emociones"]
+    },
+    {
+        texto: "Que, aunque tú no lo sabías, yo en el fondo te esperaba.",
+        autor: "Defreds",
+        obra: "Casi sin querer",
+        temas: ["amor","espera","destino"]
+    },
+    {
+        texto: "Pero he de confesarte que nunca he disfrutado tanto como entre tus brazos: ese fue mi viaje preferido.",
+        autor: "Defreds",
+        obra: "Casi sin querer",
+        temas: ["amor","intimidad","pasión"]
+    },
+    {
+        texto: "Ver que ese desconocido, en algún momento, fue tu mayor conocido. Y sobretodo, saber que dos personas que se recuerdan cuando ni hablan son capaces de todo.",
+        autor: "Defreds",
+        obra: "Casi sin querer",
+        temas: ["recuerdos","nostalgia","amor","distancia"]
+    },
+    {
+        texto: "Y aunque no lo creas, sus silencios dicen más que el resto del mundo a gritos.",
+        autor: "Defreds",
+        obra: "Casi sin querer",
+        temas: ["silencio","verdad","sentimientos","comunicación"]
+    },
+    {
+        texto: "Respiro. Pero ya no vivo...",
+        autor: "Defreds",
+        obra: "Casi sin querer",
+        temas: ["tristeza","desamor","vacío","dolor emocional"]
+    },
+    {
+        texto: "Algunas veces recuerda aquello que pudo ser y dejó pasar por miedo.",
+        autor: "Defreds",
+        obra: "Casi sin querer",
+        temas: ["miedo","oportunidades perdidas","nostalgia"]
+    },
+    {
+        texto: "Y ahora quiero un billete para huir de recuerdos. Y sale demasiado caro. Dicen que está agotado.",
+        autor: "Defreds",
+        obra: "Casi sin querer",
+        temas: ["huida","recuerdos","dolor emocional"]
+    },
 
     // --------------------- GABRIEL GARCÍA MÁRQUEZ ---------------------
-    {texto: "No hay un anciano que olvide dónde escondió su tesoro.", autor: "Gabriel García Márquez", obra: "Memoria de mis putas tristes"},
-    {texto: "La fuerza invencible que ha impulsado al mundo no son los amores felices sino los contrariados.", autor: "Gabriel García Márquez", obra: "Memoria de mis putas tristes"},
-    {texto: "El sexo es el consuelo que uno tiene cuando no le alcanza el amor.", autor: "Gabriel García Márquez", obra: "Memoria de mis putas tristes"},
-    {texto: "Los celos saben más que la verdad.", autor: "Gabriel García Márquez", obra: "Memoria de mis putas tristes"},
-    {texto: "Es imposible no terminar siendo como los otros creen que uno es.", autor: "Gabriel García Márquez", obra: "Memoria de mis putas tristes"},
-    {texto: "No hay peor desgracia que morir solo.", autor: "Gabriel García Márquez", obra: "Memoria de mis putas tristes"},
+    {
+        texto: "No hay un anciano que olvide dónde escondió su tesoro.",
+        autor: "Gabriel García Márquez",
+        obra: "Memoria de mis putas tristes",
+        temas: ["memoria","vejez","sabiduría"]
+    },
+    {
+        texto: "La fuerza invencible que ha impulsado al mundo no son los amores felices sino los contrariados.",
+        autor: "Gabriel García Márquez",
+        obra: "Memoria de mis putas tristes",
+        temas: ["amor","desamor","pasión","contradicción"]
+    },
+    {
+        texto: "El sexo es el consuelo que uno tiene cuando no le alcanza el amor.",
+        autor: "Gabriel García Márquez",
+        obra: "Memoria de mis putas tristes",
+        temas: ["amor","sexo","soledad","compensación emocional"]
+    },
+    {
+        texto: "Los celos saben más que la verdad.",
+        autor: "Gabriel García Márquez",
+        obra: "Memoria de mis putas tristes",
+        temas: ["celos","verdad","engaño","emociones"]
+    },
+    {
+        texto: "Es imposible no terminar siendo como los otros creen que uno es.",
+        autor: "Gabriel García Márquez",
+        obra: "Memoria de mis putas tristes",
+        temas: ["identidad","percepción","sociedad"]
+    },
+    {
+        texto: "No hay peor desgracia que morir solo.",
+        autor: "Gabriel García Márquez",
+        obra: "Memoria de mis putas tristes",
+        temas: ["soledad","muerte","tragedia"]
+    },
 
-    // Citas duplicadas para Cicerón y Julio César sin obra
-    {texto: "No hay un anciano que olvide dónde escondió su tesoro.", autor: "Cicerón", obra: ""},
-    {texto: "Es imposible no terminar siendo como los otros creen que uno es.", autor: "Julio César", obra: ""},
+    // --------------------- Cicerón / Julio César ---------------------
+    {
+        texto: "No hay un anciano que olvide dónde escondió su tesoro.",
+        autor: "Cicerón",
+        obra: "",
+        temas: ["vejez","memoria","sabiduría"]
+    },
+    {
+        texto: "Es imposible no terminar siendo como los otros creen que uno es.",
+        autor: "Julio César",
+        obra: "",
+        temas: ["identidad","percepción social"]
+    },
 
     // --------------------- HEMINGWAY ---------------------
-    {texto: "Pensó que aburrimiento era una palabra que ningún campesino del mundo usaría en ninguna otra lengua. Y sin embargo, es la palabra más corriente en boca de un español de cualquier clase.", autor: "Ernest Hemingway", obra: "Por quién doblan las campanas"},
-    {texto: "Quiero lo que tú quieras. Quiero hacerlo todo, y si lo hacemos todo, quizá sea como si lo otro no hubiese ocurrido.", autor: "Ernest Hemingway", obra: "Por quién doblan las campanas"},
-    {texto: "La llegada de la noche le hacía sentirse siempre más solo, y aquella noche se sentía tan solo, que se había hecho dentro de él un vacío como si fuera de hambre.", autor: "Ernest Hemingway", obra: "Por quién doblan las campanas"},
-    {texto: "Pero un hombre inteligente se ve obligado a emborracharse algunas veces para poder pasar el tiempo con los imbéciles.", autor: "Ernest Hemingway", obra: "Por quién doblan las campanas"}
+    {
+        texto: "Pensó que aburrimiento era una palabra que ningún campesino del mundo usaría en ninguna otra lengua. Y sin embargo, es la palabra más corriente en boca de un español de cualquier clase.",
+        autor: "Ernest Hemingway",
+        obra: "Por quién doblan las campanas",
+        temas: ["cultura","lenguaje","sociedad"]
+    },
+    {
+        texto: "Quiero lo que tú quieras. Quiero hacerlo todo, y si lo hacemos todo, quizá sea como si lo otro no hubiese ocurrido.",
+        autor: "Ernest Hemingway",
+        obra: "Por quién doblan las campanas",
+        temas: ["amor","reconciliación","deseo"]
+    },
+    {
+        texto: "La llegada de la noche le hacía sentirse siempre más solo, y aquella noche se sentía tan solo, que se había hecho dentro de él un vacío como si fuera de hambre.",
+        autor: "Ernest Hemingway",
+        obra: "Por quién doblan las campanas",
+        temas: ["soledad","noche","vacío emocional"]
+    },
+    {
+        texto: "Pero un hombre inteligente se ve obligado a emborracharse algunas veces para poder pasar el tiempo con los imbéciles.",
+        autor: "Ernest Hemingway",
+        obra: "Por quién doblan las campanas",
+        temas: ["inteligencia","sociedad","alcohol","frustración"]
+    }
 ];
 
 /* ============================
@@ -291,6 +418,7 @@ function mostrarInicioDestacados() {
 
 // ================= INICIO AUTOMÁTICO =================
 citaDelDia();
+
 
 
 
