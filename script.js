@@ -87,7 +87,7 @@ const citas = [
 
     // --------------------- GABRIEL GARCÍA MÁRQUEZ ---------------------
     {
-        texto: "No hay un anciano que olvide dónde escondió su tesoro.(Atribuida a Cicerón)",
+        texto: "No hay un anciano que olvide dónde escondió su tesoro. (Atribuida a Cicerón)",
         autor: "Gabriel García Márquez",
         obra: "Memoria de mis putas tristes",
         temas: ["Memoria","Vejez","Recuerdo","Tiempo","Vida"]
@@ -352,6 +352,7 @@ function mostrarInicioDestacados() {
 // INICIO AUTOMÁTICO
 // ===========================
 document.addEventListener("DOMContentLoaded", mostrarInicio);
+
 
 
 
