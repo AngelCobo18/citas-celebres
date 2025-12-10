@@ -6,7 +6,7 @@ const citas = [
     {texto: "Por el día sobrevivía a base de amigos y poesía. Pero cada noche era una agonía. Deseaba que no llegara nunca, para no tener que tumbarme y pensar en su melena.", autor: "Defreds", obra: "Casi sin querer", temas: ["soledad","dependencia emocional","nostalgia","amor","amistad","tristeza","miedo","noche"] },
     {texto: "Como llorar sin ganas. Como follar sin ansias. Como la vida sin ti.", autor: "Defreds", obra: "Casi sin querer",temas: ["tristeza", "vacío", "desamor", "rutina","deseo frustrado","deseo"]},
     {texto: "Te odio, te quiero.", autor: "Defreds", obra: "Casi sin querer",temas: ["amor tóxico","amor", "odio", "confusión", "dualidad"},
-    {texto: "Esa persona que da igual el tiempo que pase, da igual dónde vivas y con quién. Esa que recuerdas en cualquier lugar inesperado. Y que solo con recordarla eres capaz de temblar.", autor: "Defreds", obra: "Casi sin querer",temas: ["]},
+    {texto: "Esa persona que da igual el tiempo que pase, da igual dónde vivas y con quién. Esa que recuerdas en cualquier lugar inesperado. Y que solo con recordarla eres capaz de temblar.", autor: "Defreds", obra: "Casi sin querer",},
     {texto: "Habla mucho. Justo lo que calla es lo que no se puede saber.", autor: "Defreds", obra: "Casi sin querer"},
     {texto: "Si te mirara a los ojos una vez más, no me atrevería a decir nada, quizá te abrazaría. O lloraría, no lo sé.", autor: "Defreds", obra: "Casi sin querer"},
     {texto: "Que, aunque tú no lo sabías, yo en el fondo te esperaba.", autor: "Defreds", obra: "Casi sin querer"},
@@ -291,6 +291,7 @@ function mostrarInicioDestacados() {
 
 // ================= INICIO AUTOMÁTICO =================
 citaDelDia();
+
 
 
 
