@@ -36,18 +36,61 @@ const citas = [
     {texto: "Pero un hombre inteligente se ve obligado a emborracharse algunas veces para poder pasar el tiempo con los imbéciles.", autor: "Ernest Hemingway", obra: "Por quién doblan las campanas"}
 ];
 
-// ===========================
-// CITA DEL DÍA
-// ===========================
-function citaDelDia() {
-    const hoy = new Date().getDate();
-    const index = hoy % citas.length;
-    const cita = citas[index];
+/* =======================
+     CITA DEL DÍA ROTATIVA
+   ======================= */
 
-    document.getElementById("cita-texto").innerText = `"${cita.texto}"`;
-    document.getElementById("cita-autor").innerText = `— ${cita.autor}${cita.obra ? ', ' + cita.obra : ''}`;
+// Mezcla aleatoriamente un array (algoritmo Fisher–Yates)
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
-citaDelDia();
+
+// Devuelve la cita del día
+function getQuoteOfTheDay() {
+    const today = new Date().toDateString();
+
+    // Si ya se mostró una cita hoy, úsala
+    const storedDate = localStorage.getItem("quoteDate");
+    const storedQuote = localStorage.getItem("quoteOfTheDay");
+
+    if (storedDate === today && storedQuote) {
+        return JSON.parse(storedQuote);
+    }
+
+    // Obtener cita aleatoria sin repetir demasiado
+    if (!window.quoteQueue || window.quoteQueue.length === 0) {
+        // Clonar todas las citas y mezclarlas
+        window.quoteQueue = shuffle([...citas]);
+    }
+
+    // Elegir la siguiente cita de la cola
+    const nextQuote = window.quoteQueue.pop();
+
+    // Guardarla para hoy
+    localStorage.setItem("quoteDate", today);
+    localStorage.setItem("quoteOfTheDay", JSON.stringify(nextQuote));
+
+    return nextQuote;
+}
+
+// Mostrar en pantalla
+function renderQuoteOfTheDay() {
+    const quote = getQuoteOfTheDay();
+    const container = document.getElementById("quote-of-day");
+
+    container.innerHTML = `
+        <h2 class="titulo-cita-dia">CITA DEL DÍA</h2>
+        <p class="texto-cita">"${quote.text}"</p>
+        <p class="autor-cita">— ${quote.author} (${quote.book})</p>
+    `;
+}
+
+document.addEventListener("DOMContentLoaded", renderQuoteOfTheDay);
+
 
 // ===========================
 // FUNCIONES PRINCIPALES
@@ -254,6 +297,7 @@ function mostrarInicioDestacados() {
 
 // ================= INICIO AUTOMÁTICO =================
 citaDelDia();
+
 
 
 
