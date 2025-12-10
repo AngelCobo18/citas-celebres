@@ -3,8 +3,6 @@
 // ===========================
 const citas = [
     // --------------------- DEFREDS ---------------------
-   const citas = [
-    // --------------------- DEFREDS ---------------------
     {
         texto: "Por el día sobrevivía a base de amigos y poesía. Pero cada noche era una agonía. Deseaba que no llegara nunca, para no tener que tumbarme y pensar en su melena.",
         autor: "Defreds",
@@ -418,6 +416,7 @@ function mostrarInicioDestacados() {
 
 // ================= INICIO AUTOMÁTICO =================
 citaDelDia();
+
 
 
 
