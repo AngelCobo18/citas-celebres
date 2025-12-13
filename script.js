@@ -161,7 +161,7 @@ const citas = [
         autor: "Ernest Hemingway",
         obra: "Por quién doblan las campanas",
         temas: ["Humor","Ironía","Sarcasmo","Desilusión","Alcohol","Adicción"]
-    }
+    },
      // --------------------- JAIME PEÑAFIEL (Alto y claro) ---------------------
     {
         texto: "Sería mala señal que el recuerdo de aquel gozo ya no sea gozo, mientras que el recuerdo del dolor que le produce si sea dolo porque, cuando el desamor se ha apoderado de la vida de un matrimonio los recuerdos no sirven para provocar reconciliaciones, sino que son vientos que levantan tempestades en el corazón.",
@@ -427,6 +427,7 @@ function mostrarInicioDestacados() {
 // INICIO AUTOMÁTICO
 // ===========================
 document.addEventListener("DOMContentLoaded", mostrarInicio);
+
 
 
 
