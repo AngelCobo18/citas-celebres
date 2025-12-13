@@ -546,11 +546,23 @@ function iniciarTest() {
         mostrarPregunta();
     }
 }
+function mostrarMinijuegos() {
+    const cont = document.getElementById("contenido");
+    cont.innerHTML = `
+        <h2>Minijuegos</h2>
+        <div class="seleccion-juego">
+            <button onclick="iniciarTarjetas()">Juego de Tarjetas</button>
+            <button onclick="iniciarTest()">Juego Tipo Test</button>
+        </div>
+        <div id="juego-contenido"></div>
+    `;
+}
 
 // ===========================
 // INICIO AUTOMÁTICO
 // ===========================
 document.addEventListener("DOMContentLoaded", mostrarInicio);
+
 
 
 
