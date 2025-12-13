@@ -162,6 +162,81 @@ const citas = [
         obra: "Por quién doblan las campanas",
         temas: ["Humor","Ironía","Sarcasmo","Desilusión","Alcohol","Adicción"]
     }
+     // --------------------- JAIME PEÑAFIEL (Alto y claro) ---------------------
+    {
+        texto: "Sería mala señal que el recuerdo de aquel gozo ya no sea gozo, mientras que el recuerdo del dolor que le produce si sea dolo porque, cuando el desamor se ha apoderado de la vida de un matrimonio los recuerdos no sirven para provocar reconciliaciones, sino que son vientos que levantan tempestades en el corazón.",
+        autor: "Jaime Peñafiel",
+        obra: "Alto y claro",
+        temas: ["Desamor","Dolor","Memoria","Recuerdo","Tristeza","Amor perdido"]
+    },
+    {
+        texto: "No hay duda de que la convivencia aporta mucha vulgaridad a la vida matrimonial de un hombre y una mujer, y mucho más si se trata de una relación mal avenida.",
+        autor: "Jaime Peñafiel",
+        obra: "Alto y claro",
+        temas: ["Desamor","Tristeza","Conflicto","Sociedad","Vida"]
+    },
+    {
+        texto: "El cumplir con el deber no ha sido para mí nunca un sacrificio sino una íntima satisfacción. Hay que sacrificarse por el bien de los demás y no solo de boquilla.",
+        autor: "Jaime Peñafiel",
+        obra: "Alto y claro",
+        temas: ["Sacrificio","Vida","Cambio","Conocimiento"]
+    },
+    {
+        texto: "No es lo mismo estar dormido que estar durmiendo, como tampoco estar jodido que estar jodiendo.",
+        autor: "Jaime Peñafiel",
+        obra: "Alto y claro",
+        temas: ["Dualidad","Ironía","Humor"]
+    },
+    {
+        texto: "Nadie ama al mensajero que trae malas noticias.",
+        autor: "Jaime Peñafiel",
+        obra: "Alto y claro",
+        temas: ["Desilusión","Conflicto","Dolor"]
+    },
+    {
+        texto: "Si volviera a vivir, haría lo mismo. No porque piense que todo lo he hecho bien, sino porque estoy convencida de que volvería a cometer incluso las mismas equivocaciones.",
+        autor: "Jaime Peñafiel",
+        obra: "Alto y claro",
+        temas: ["Vida","Cambio","Dualidad","Desilusión"]
+    },
+    {
+        texto: "Las palabras no están hechas para encubrir la verdad, sino para exponerla.",
+        autor: "Jaime Peñafiel",
+        obra: "Alto y claro",
+        temas: ["Verdad","Conocimiento","Comunicación"]
+    },
+
+    // --------------------- AUTORES ORIGINALES ---------------------
+    {
+        texto: "El cumplir con el deber no ha sido para mí nunca un sacrificio sino una íntima satisfacción. Hay que sacrificarse por el bien de los demás y no solo de boquilla.",
+        autor: "Don Juan de Borbón",
+        obra: "",
+        temas: ["Sacrificio","Vida","Cambio","Conocimiento"]
+    },
+    {
+        texto: "No es lo mismo estar dormido que estar durmiendo, como tampoco estar jodido que estar jodiendo.",
+        autor: "Camilo José Cela",
+        obra: "",
+        temas: ["Dualidad","Ironía","Humor"]
+    },
+    {
+        texto: "Nadie ama al mensajero que trae malas noticias.",
+        autor: "Sófocles",
+        obra: "",
+        temas: ["Desilusión","Conflicto","Dolor"]
+    },
+    {
+        texto: "Si volviera a vivir, haría lo mismo. No porque piense que todo lo he hecho bien, sino porque estoy convencida de que volvería a cometer incluso las mismas equivocaciones.",
+        autor: "Isabel Preysler",
+        obra: "",
+        temas: ["Vida","Cambio","Dualidad","Desilusión"]
+    },
+    {
+        texto: "Las palabras no están hechas para encubrir la verdad, sino para exponerla.",
+        autor: "José Martí",
+        obra: "",
+        temas: ["Verdad","Conocimiento","Comunicación"]
+    }
 ];
 
 // ===========================
@@ -352,6 +427,7 @@ function mostrarInicioDestacados() {
 // INICIO AUTOMÁTICO
 // ===========================
 document.addEventListener("DOMContentLoaded", mostrarInicio);
+
 
 
 
