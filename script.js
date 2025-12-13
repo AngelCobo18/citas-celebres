@@ -453,11 +453,105 @@ html += `</div>`;
 
     cont.innerHTML = html;
 }
+// =======================
+// MINIJUEGOS
+// =======================
+
+// Función para obtener n citas aleatorias
+function getRandomCitas(n) {
+    const shuffled = [...citas].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, n);
+}
+
+// =======================
+// JUEGO DE TARJETAS
+// =======================
+function iniciarTarjetas() {
+    const cont = document.getElementById("juego-contenido");
+    const tarjetas = getRandomCitas(5); // 5 tarjetas aleatorias
+
+    cont.innerHTML = '<h3>Juego de Tarjetas</h3><div id="tarjetas-container"></div>';
+    const container = document.getElementById("tarjetas-container");
+
+    tarjetas.forEach((cita, i) => {
+        const card = document.createElement("div");
+        card.className = "tarjeta";
+        card.innerHTML = `
+            <div class="frente">
+                <p>${cita.texto}</p>
+                <input type="text" placeholder="¿Quién dijo esto?" id="input-${i}">
+                <button onclick="voltearTarjeta(${i}, '${cita.autor.replace("'", "\\'")}')">Verificar</button>
+            </div>
+            <div class="detras" id="detras-${i}" style="display:none;">
+                <p>Respuesta: ${cita.autor}</p>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+function voltearTarjeta(i, autor) {
+    const input = document.getElementById(`input-${i}`);
+    const detras = document.getElementById(`detras-${i}`);
+    const userAnswer = input.value.trim().toLowerCase();
+    const correct = autor.toLowerCase();
+
+    if(userAnswer === correct) {
+        detras.innerHTML = `<p>¡Correcto! ✅ ${autor}</p>`;
+    } else {
+        detras.innerHTML = `<p>Incorrecto ❌ La respuesta correcta es: ${autor}</p>`;
+    }
+
+    detras.style.display = "block";
+}
+
+// =======================
+// JUEGO TIPO TEST
+// =======================
+function iniciarTest() {
+    const cont = document.getElementById("juego-contenido");
+    const testCitas = getRandomCitas(5);
+    let score = 0;
+    let current = 0;
+
+    cont.innerHTML = '<h3>Juego Tipo Test</h3><div id="test-container"></div>';
+    mostrarPregunta();
+
+    function mostrarPregunta() {
+        if(current >= testCitas.length) {
+            cont.innerHTML = `<h3>Test finalizado</h3><p>Tu puntuación: ${(score / testCitas.length * 100).toFixed(0)}%</p>`;
+            return;
+        }
+
+        const cita = testCitas[current];
+        const container = document.getElementById("test-container");
+
+        // Generar 3 autores incorrectos aleatorios
+        const otrosAutores = [...new Set(citas.map(c => c.autor))]
+            .filter(a => a !== cita.autor)
+            .sort(() => 0.5 - Math.random())
+            .slice(0,3);
+
+        const opciones = [cita.autor, ...otrosAutores].sort(() => 0.5 - Math.random());
+
+        container.innerHTML = `
+            <p>${cita.texto}</p>
+            ${opciones.map((a, idx) => `<button onclick="respuestaTest('${a.replace("'", "\\'")}', '${cita.autor.replace("'", "\\'")}')">${a}</button>`).join('')}
+        `;
+    }
+
+    window.respuestaTest = function(elegida, correcta) {
+        if(elegida === correcta) score++;
+        current++;
+        mostrarPregunta();
+    }
+}
 
 // ===========================
 // INICIO AUTOMÁTICO
 // ===========================
 document.addEventListener("DOMContentLoaded", mostrarInicio);
+
 
 
 
