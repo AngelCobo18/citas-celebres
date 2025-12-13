@@ -342,18 +342,18 @@ function buscarHeader() {
 }
 
 // ===========================
-// AUTORES Y OBRAS
+// PERSONAJES / AUTORES
 // ===========================
-function mostrarAutores() {
-    const autores = [...new Set(citas.map(c => c.autor))].sort();
+function mostrarPersonajes() {
+    const personajes = [...new Set(citas.map(c => c.autor))].sort();
     const cont = document.getElementById("contenido");
-    cont.innerHTML = "<h2>Autores</h2>";
-    autores.forEach(a => {
-        cont.innerHTML += `<p class="link" onclick="verAutor('${a}')">${a}</p>`;
+    cont.innerHTML = "<h2>Personajes</h2>";
+    personajes.forEach(p => {
+        cont.innerHTML += `<p class="link" onclick="verPersonaje('${p}')">${p}</p>`;
     });
 }
 
-function verAutor(nombre) {
+function verPersonaje(nombre) {
     const resultados = citas.filter(c => c.autor === nombre);
     mostrarResultados(resultados, `Citas de ${nombre}`);
 }
@@ -400,20 +400,20 @@ function mostrarInicio() {
 function mostrarInicioDestacados() {
     const cont = document.getElementById("contenido");
 
-    const autoresPorVisitas = [...new Set(citas.map(c => c.autor))].slice(0,5);
-    const obrasPorVisitas = [...new Set(citas.map(c => c.obra))].filter(o => o !== "").slice(0,5);
-    const temasPorFrecuencia = [...new Set(citas.flatMap(c => c.temas || []))].slice(0,5);
+    const personajesPorVisitas = [...new Set(citas.map(c => c.autor))].slice(0,5);
+const obrasPorVisitas = [...new Set(citas.map(c => c.obra))].filter(o => o !== "").slice(0,5);
+const temasPorFrecuencia = [...new Set(citas.flatMap(c => c.temas || []))].slice(0,5);
 
-    let html = `<section class="section-destacados">
-        <h3>Libros Destacados</h3>
-        <div class="destacados-list">`;
-    obrasPorVisitas.forEach(o => html += `<div onclick="verObra('${o}')">${o}</div>`);
-    html += `</div>`;
+let html = `<section class="section-destacados">
+    <h3>Libros Destacados</h3>
+    <div class="destacados-list">`;
+obrasPorVisitas.forEach(o => html += `<div onclick="verObra('${o}')">${o}</div>`);
+html += `</div>`;
 
-    html += `<h3>Personajes Destacados</h3>
-        <div class="destacados-list">`;
-    autoresPorVisitas.forEach(a => html += `<div onclick="verAutor('${a}')">${a}</div>`);
-    html += `</div>`;
+html += `<h3>Personajes Destacados</h3>
+    <div class="destacados-list">`;
+personajesPorVisitas.forEach(p => html += `<div onclick="verPersonaje('${p}')">${p}</div>`);
+html += `</div>`;
 
     html += `<h3>Temas Populares</h3>
         <div class="destacados-list">`;
@@ -427,6 +427,7 @@ function mostrarInicioDestacados() {
 // INICIO AUTOMÁTICO
 // ===========================
 document.addEventListener("DOMContentLoaded", mostrarInicio);
+
 
 
 
