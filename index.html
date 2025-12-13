@@ -39,6 +39,16 @@
         <input type="text" id="buscador" placeholder="Buscar citas..." oninput="buscar()">
     </section>
 
+    <section class="minijuegos">
+    <h2>Minijuegos</h2>
+    <div class="seleccion-juego">
+        <button onclick="iniciarTarjetas()">Juego de Tarjetas</button>
+        <button onclick="iniciarTest()">Juego Tipo Test</button>
+    </div>
+
+    <div id="juego-contenido"></div>
+</section>
+
     <!-- ================= CONTENIDO INICIO ================= -->
     <main id="contenido"></main>
 
@@ -49,5 +59,6 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
