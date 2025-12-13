@@ -201,3 +201,16 @@ footer {
     .menu button { font-size: 14px; margin-left: 5px; }
     .buscador-header input { width: 120px; }
 }
+.tarjeta {
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+}
+
+.tarjeta .frente {
+    display: block;
+}
+
+
