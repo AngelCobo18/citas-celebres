@@ -236,7 +236,38 @@ const citas = [
         autor: "José Martí",
         obra: "",
         temas: ["Verdad","Conocimiento","Comunicación"]
-    }
+    },
+    // --------------------- MIGUEL DELIBES ---------------------
+{
+    texto: "El vicio o la virtud de leer dependían del primer libro. Aquel que llegaba a interesarse por un libro se convertía inevitablemente en esclavo de la lectura. Un libro te remitía a otro libro, un autor a otro autor, porque, en contra de lo que solía decirse, los libros nunca te resolvían problemas sino que te los creaban, de modo que la curiosidad del lector siempre quedaba insatisfecha. Y, al apelar a otros títulos, iniciabas una cadena que ya no podía concluir sino con la muerte.",
+    autor: "Miguel Delibes",
+    obra: "Señora de rojo sobre fondo gris",
+    temas: ["Infancia", "Literatura", "Curiosidad", "Muerte"]
+},
+{
+    texto: "Los cuentos no interesaban en absoluto a los niños, que lo que los niños deseaban leer eran los libros que sus padres cerraban con llave en su biblioteca.",
+    autor: "Miguel Delibes",
+    obra: "Señora de rojo sobre fondo gris",
+    temas: ["Infancia", "Literatura", "Deseo", "Curiosidad"]
+},
+{
+    texto: "¿Crees tú que hay más de media docena de personas en el mundo que merezcan ser amadas?",
+    autor: "Miguel Delibes",
+    obra: "Señora de rojo sobre fondo gris",
+    temas: ["Amor", "Infancia", "Literatura"]
+},
+{
+    texto: "El campo por sí solo no aliviaba la melancolía, que era preciso traer la alegría dentro para disfrutarlo.",
+    autor: "Miguel Delibes",
+    obra: "Señora de rojo sobre fondo gris",
+    temas: ["Infancia", "Literatura", "Tristeza", "Alegría"]
+},
+{
+    texto: "¿Qué valor tenía saber que había sido, si había dejado de ser?",
+    autor: "Miguel Delibes",
+    obra: "Señora de rojo sobre fondo gris",
+    temas: ["Infancia", "Literatura", "Nostalgia", "Tiempo"]
+}
 ];
 
 // ===========================
@@ -427,6 +458,7 @@ html += `</div>`;
 // INICIO AUTOMÁTICO
 // ===========================
 document.addEventListener("DOMContentLoaded", mostrarInicio);
+
 
 
 
