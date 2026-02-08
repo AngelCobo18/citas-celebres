@@ -485,6 +485,37 @@ const citas = [
   autor: "Francisco Umbral",
   obra: "Balada de gamberros",
   temas: ["Juventud", "Destino", "Ironía"]
+},
+    // --------------------- FRANCISCO UMBRAL dias sin escuela ---------------------
+{
+  texto: "Lo que más se nota cuando cambia uno de sitio es el agua, que parece una cosa tan tonta y, sin embargo, en cada sitio sabe de una forma y te pone la lengua gorda o la lengua suavecita, y te quita la sed o no te la quita, según.",
+  autor: "Francisco Umbral",
+  obra: "Días sin escuela",
+  temas: ["Vida", "Percepción", "Cambio"]
+},
+{
+  texto: "Olores y sabores, una musiquilla, recuerdos, digo, apenas los elementos imprescindibles para componer una canción muy corta y más bien mediocre, es lo que le queda al hombre cuando hace recuento de tanta vida y tanta muerte, y lo que cree que es un libro muy gordo y por escribir —su existencia—, no es sino un breve cuplé que, por otra parte, da igual no escribirlo, pues se parece en la letra a todos los demás cuplés que a los hombres les canta en el corazón o en la memoria",
+  autor: "Francisco Umbral",
+  obra: "Días sin escuela",
+  temas: ["Recuerdo", "Memoria", "Existencia"]
+},
+{
+  texto: "Uno ha perdido su inocencia cuando insiste en las gracias o en las torpezas de niño sabiendo que por ellas, precisamente, es por lo que los demás le toman en cuenta.",
+  autor: "Francisco Umbral",
+  obra: "Días sin escuela",
+  temas: ["Infancia", "Identidad", "Cambio"]
+},
+{
+  texto: "El cobarde que engaña y gana ha hecho una obra de arte de su cobardía, es de la raza de los sinuosos, puede llegar lejos.",
+  autor: "Francisco Umbral",
+  obra: "Días sin escuela",
+  temas: ["Engaño", "Poder", "Ironía"]
+},
+{
+  texto: "La calle y la casa se disputan al niño.",
+  autor: "Francisco Umbral",
+  obra: "Días sin escuela",
+  temas: ["Infancia", "Destino", "Identidad"]
 }
 ];
 
@@ -681,105 +712,11 @@ function getRandomCitas(n) {
     return shuffled.slice(0, n);
 }
 
-// =======================
-// JUEGO DE TARJETAS
-// =======================
-function iniciarTarjetas() {
-    const cont = document.getElementById("juego-contenido");
-    const tarjetas = getRandomCitas(5); // 5 tarjetas aleatorias
-
-    cont.innerHTML = '<h3>Juego de Tarjetas</h3><div id="tarjetas-container"></div>';
-    const container = document.getElementById("tarjetas-container");
-
-    tarjetas.forEach((cita, i) => {
-        const card = document.createElement("div");
-        card.className = "tarjeta";
-        card.innerHTML = `
-            <div class="frente">
-                <p>${cita.texto}</p>
-                <input type="text" placeholder="¿Quién dijo esto?" id="input-${i}">
-                <button onclick="voltearTarjeta(${i}, '${cita.autor.replace("'", "\\'")}')">Verificar</button>
-            </div>
-            <div class="detras" id="detras-${i}" style="display:none;">
-                <p>Respuesta: ${cita.autor}</p>
-            </div>
-        `;
-        container.appendChild(card);
-    });
-}
-
-function voltearTarjeta(i, autor) {
-    const input = document.getElementById(`input-${i}`);
-    const detras = document.getElementById(`detras-${i}`);
-    const userAnswer = input.value.trim().toLowerCase();
-    const correct = autor.toLowerCase();
-
-    if(userAnswer === correct) {
-        detras.innerHTML = `<p>¡Correcto! ✅ ${autor}</p>`;
-    } else {
-        detras.innerHTML = `<p>Incorrecto ❌ La respuesta correcta es: ${autor}</p>`;
-    }
-
-    detras.style.display = "block";
-}
-
-// =======================
-// JUEGO TIPO TEST
-// =======================
-function iniciarTest() {
-    const cont = document.getElementById("juego-contenido");
-    const testCitas = getRandomCitas(5);
-    let score = 0;
-    let current = 0;
-
-    cont.innerHTML = '<h3>Juego Tipo Test</h3><div id="test-container"></div>';
-    mostrarPregunta();
-
-    function mostrarPregunta() {
-        if(current >= testCitas.length) {
-            cont.innerHTML = `<h3>Test finalizado</h3><p>Tu puntuación: ${(score / testCitas.length * 100).toFixed(0)}%</p>`;
-            return;
-        }
-
-        const cita = testCitas[current];
-        const container = document.getElementById("test-container");
-
-        // Generar 3 autores incorrectos aleatorios
-        const otrosAutores = [...new Set(citas.map(c => c.autor))]
-            .filter(a => a !== cita.autor)
-            .sort(() => 0.5 - Math.random())
-            .slice(0,3);
-
-        const opciones = [cita.autor, ...otrosAutores].sort(() => 0.5 - Math.random());
-
-        container.innerHTML = `
-            <p>${cita.texto}</p>
-            ${opciones.map((a, idx) => `<button onclick="respuestaTest('${a.replace("'", "\\'")}', '${cita.autor.replace("'", "\\'")}')">${a}</button>`).join('')}
-        `;
-    }
-
-    window.respuestaTest = function(elegida, correcta) {
-        if(elegida === correcta) score++;
-        current++;
-        mostrarPregunta();
-    }
-}
-function mostrarMinijuegos() {
-    const cont = document.getElementById("contenido");
-    cont.innerHTML = `
-        <h2>Minijuegos</h2>
-        <div class="seleccion-juego">
-            <button onclick="iniciarTarjetas()">Juego de Tarjetas</button>
-            <button onclick="iniciarTest()">Juego Tipo Test</button>
-        </div>
-        <div id="juego-contenido"></div>
-    `;
-}
-
 // ===========================
 // INICIO AUTOMÁTICO
 // ===========================
 document.addEventListener("DOMContentLoaded", mostrarInicio);
+
 
 
 
