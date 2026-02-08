@@ -176,31 +176,31 @@ const citas = [
         temas: ["Desamor","Tristeza","Conflicto","Sociedad","Vida"]
     },
     {
-        texto: "El cumplir con el deber no ha sido para mí nunca un sacrificio sino una íntima satisfacción. Hay que sacrificarse por el bien de los demás y no solo de boquilla.",
+        texto: "El cumplir con el deber no ha sido para mí nunca un sacrificio sino una íntima satisfacción. Hay que sacrificarse por el bien de los demás y no solo de boquilla. (Don Juan de Borbón)",
         autor: "Jaime Peñafiel",
         obra: "Alto y claro",
         temas: ["Sacrificio","Vida","Cambio","Conocimiento"]
     },
     {
-        texto: "No es lo mismo estar dormido que estar durmiendo, como tampoco estar jodido que estar jodiendo.",
+        texto: "No es lo mismo estar dormido que estar durmiendo, como tampoco estar jodido que estar jodiendo. (Atribuida a Camilo José Cela)",
         autor: "Jaime Peñafiel",
         obra: "Alto y claro",
         temas: ["Dualidad","Ironía","Humor"]
     },
     {
-        texto: "Nadie ama al mensajero que trae malas noticias.",
+        texto: "Nadie ama al mensajero que trae malas noticias. (Sófocles)",
         autor: "Jaime Peñafiel",
         obra: "Alto y claro",
         temas: ["Desilusión","Conflicto","Dolor"]
     },
     {
-        texto: "Si volviera a vivir, haría lo mismo. No porque piense que todo lo he hecho bien, sino porque estoy convencida de que volvería a cometer incluso las mismas equivocaciones.",
+        texto: "Si volviera a vivir, haría lo mismo. No porque piense que todo lo he hecho bien, sino porque estoy convencida de que volvería a cometer incluso las mismas equivocaciones. (Isabel Preysler)",
         autor: "Jaime Peñafiel",
         obra: "Alto y claro",
         temas: ["Vida","Cambio","Dualidad","Desilusión"]
     },
     {
-        texto: "Las palabras no están hechas para encubrir la verdad, sino para exponerla.",
+        texto: "Las palabras no están hechas para encubrir la verdad, sino para exponerla. (Atribuida a José Martí)",
         autor: "Jaime Peñafiel",
         obra: "Alto y claro",
         temas: ["Verdad","Conocimiento","Comunicación"]
@@ -267,6 +267,193 @@ const citas = [
     autor: "Miguel Delibes",
     obra: "Señora de rojo sobre fondo gris",
     temas: ["Infancia", "Literatura", "Nostalgia", "Tiempo"]
+}, 
+    // --------------------- FRANCISCO UMBRAL ---------------------
+{
+  texto: "¿Qué sería de los niños sin la desobediencia?",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Infancia", "Libertad", "Identidad"]
+},
+{
+  texto: "España siempre llora a un torero, a un general o a un político. España es viuda de varios grandes toreros, de varios grandes tribunos, de varios grandes de España.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Sociedad", "Nostalgia", "Pasado"]
+},
+{
+  texto: "La prensa diaria, sin duda, es una inercia de la guerra que se prolonga en tiempo de paz.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Sociedad", "Conflicto", "Verdad"]
+},
+{
+  texto: "El recuerdo de la posguerra es el de un largo invierno de varios años, y sin duda debió de nevar mucho.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Recuerdo", "Pasado", "Tristeza"]
+},
+{
+  texto: "los vencedores asimilan la cultura de los vencidos, desfigurándola y trivializándola inevitablemente.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Poder", "Sociedad", "Conflicto"]
+},
+{
+  texto: "el azar y la necesidad lo rigen todo en los destinos humanos",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Destino", "Existencia", "Vida"]
+},
+{
+  texto: "Más vale honra sin barcos que barcos sin honra",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Identidad", "Honor", "Valor"]
+},
+{
+  texto: "entre la Justicia y mi madre prefiero a mi madre",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Conflicto", "Familia", "Lealtad"]
+},
+{
+  texto: "El destino del cuerpo era otro cuerpo",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Deseo", "Cuerpo", "Sexo"]
+},
+{
+  texto: "La sexualidad del cine no encuentra correspondencia en la vida.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Sexo", "Realidad", "Percepción"]
+},
+{
+  texto: "El árbol es hermoso con sus ramas y sus pájaros y sus hojas. Cualquier simbolismo que se haga con el árbol, se hace siempre a costa de cargarse el árbol, a costa de talarlo para sacar de él leña de conceptos.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Naturaleza", "Verdad", "Percepción"]
+},
+{
+  texto: "Los poetas, los predicadores y los filósofos han venido a ensuciar la naturaleza con sus alegorías, con sus símbolos, y de un pájaro han hecho un alma y de un árbol una vida. Él utilizar la naturaleza como ejemplo moral es un fraude, es un atentado contra la naturaleza que debiera estar prohibido.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Naturaleza", "Arte", "Ironía"]
+},
+{
+  texto: "Lo que mejor nos daba la medida de nuestra humildad era la ropa.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Identidad", "Sociedad", "Realidad"]
+},
+{
+  texto: "la resignación es una forma última y menor de la libertad.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Libertad", "Desesperación", "Vida"]
+},
+{
+  texto: "Sacarle la lengua a la humanidad en general es un socorrido recurso para cuando uno no puede sacarle la lengua a unos señores en particular.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Ironía", "Rebelión", "Sociedad"]
+},
+{
+  texto: "España es país de grandes entierros.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Muerte", "Sociedad", "Tradición"]
+},
+{
+  texto: "Porque la noción de patria es, efectivamente, una noción ecuestre, una idea a caballo, un concepto que cabalga, y todos los generales, todas las estatuas y todos los héroes están a caballo en la historia. Por muy patriota que sea, un hombre no encarna la patria hasta que no se sube a un caballo",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Identidad", "Poder", "Ironía"]
+},
+{
+  texto: "el recordar es volver a vivir",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Recuerdo", "Vida", "Memoria"]
+},
+{
+  texto: "Y a se sabe que son esos libros que el niño lee a escondidas los que verdaderamente le forman, los que echan las bases de su cultura, que será así, siempre, una cultura de orígenes clandestinos, de cimientos contradictorios, incapaces de soportar las nociones oficiales y burguesas, tradicionales, asépticas, que vendrán después.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Infancia", "Literatura", "Identidad"]
+},
+{
+  texto: "el deseado o la deseada no pueden dejar de participar, involuntariamente, de la condición, el pecado, el deseo y la fiebre que les asigna el deseador.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Deseo", "Pasión", "Erotismo"]
+},
+{
+  texto: "El niño entiende la vida como participación. Sólo con los años se llega a la lamentable categoría de espectador. El niño no sabe ser espectador puro de nada. O participa o no se divierte.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Infancia", "Vida", "Identidad"]
+},
+{
+  texto: "Una educación burguesa de derechas es una educación que no llega nunca a resolver dos problemas fundamentales, el del sexo y el del dinero.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Sociedad", "Sexo", "Hipocresía"]
+},
+{
+  texto: "La propina, como concepto económico, está a medias entre el jornal y la limosna.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Sociedad", "Economía", "Realidad"]
+},
+{
+  texto: "Dentro de nuestra civilización y nuestra cultura, el sexo y el dinero son las claves de una personalidad.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Identidad", "Sexo", "Vida"]
+},
+{
+  texto: "La diferencia entre el erotismo y la picardía puede que sea ésa: el erotismo es el sexo como desafío y la picardía era el sexo como culpabilidad.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Erotismo", "Sexo", "Dualidad"]
+},
+{
+  texto: "este país podíamos arreglarlo poniendo a todo el mundo un poco más abajo de donde está.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Ironía", "Sociedad", "Poder"]
+},
+{
+  texto: "No queremos un país lleno de pisapapeles",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Sociedad", "Identidad", "Crítica"]
+},
+{
+  texto: "Burgués es o era el habitante del burgo, según la socorrida definición etimológica, de modo que en cuanto el burgués se sale del burgo pierde toda su armadura burguesa y se convierte en otra cosa.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Sociedad", "Identidad", "Cambio"]
+},
+{
+  texto: "Todo viaje, aunque sea breve, supone la puesta en marcha de un proceso anímico implacable.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Transformación", "Existencia", "Vida"]
+},
+{
+  texto: "La moral, por muy concienzuda que sea, rara vez supera sus propios términos municipales. No hay una moral universal. Sólo hay morales municipales.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Sociedad", "Moral", "Relativismo"]
+},
+{
+  texto: "Las naciones se buscan un modelo, como las personas, y tratan de seguirlo, de imitarlo, o ni siquiera eso: se conforman con vivir por delegación.",
+  autor: "Francisco Umbral",
+  obra: "Memorias de un niño de derechas",
+  temas: ["Sociedad", "Identidad", "Destino"]
 }
 ];
 
@@ -562,6 +749,7 @@ function mostrarMinijuegos() {
 // INICIO AUTOMÁTICO
 // ===========================
 document.addEventListener("DOMContentLoaded", mostrarInicio);
+
 
 
 
