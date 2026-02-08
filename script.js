@@ -268,7 +268,7 @@ const citas = [
     obra: "Señora de rojo sobre fondo gris",
     temas: ["Infancia", "Literatura", "Nostalgia", "Tiempo"]
 }, 
-    // --------------------- FRANCISCO UMBRAL ---------------------
+    // --------------------- FRANCISCO UMBRAL Memorias de un niño de derechas---------------------
 {
   texto: "¿Qué sería de los niños sin la desobediencia? (Jean Cocteau)",
   autor: "Francisco Umbral",
@@ -448,6 +448,43 @@ const citas = [
   autor: "Francisco Umbral",
   obra: "Memorias de un niño de derechas",
   temas: ["Sociedad", "Identidad", "Destino"]
+},
+    // --------------------- FRANCISCO UMBRAL ---------------------
+{
+  texto: "Al escritor nuevo se le suele quedar corto el material. La novedad es impaciencia y la impaciencia lleva a resumir , naturalmente. Hay escritores nuevos que hacen un primer libro muy largo, pero esto es también por impaciencia, sólo que entendida o practicada a la inversa: la impaciencia de decirlo todo de una vez.",
+  autor: "Francisco Umbral",
+  obra: "Balada de gamberros",
+  temas: ["Literatura", "Tiempo", "Conocimiento"]
+},
+{
+  texto: "Las cosas no son como son, sino como las recordamos. (Atribuida a Ramón María del Valle-Inclán)",
+  autor: "Francisco Umbral",
+  obra: "Balada de gamberros",
+  temas: ["Recuerdo", "Memoria", "Percepción"]
+},
+{
+  texto: "Un hombre es su imaginación. Lo que imagina y, sobre todo, cómo se imagina a sí mismo.",
+  autor: "Francisco Umbral",
+  obra: "Balada de gamberros",
+  temas: ["Identidad", "Imaginación", "Existencia"]
+},
+{
+  texto: "Con Napoleón andaría mejor el mundo. Debía haber un Napoleón en cada siglo.",
+  autor: "Francisco Umbral",
+  obra: "Balada de gamberros",
+  temas: ["Poder", "Historia", "Ironía"]
+},
+{
+  texto: "La calle envenena. Cuando uno ha vivido mucho en la calle, lo ha visto todo. Y no tiene paciencia para meterse en una habitación a estudiar un libro, a aprender un oficio. En la calle, parece que está todo al alcance de la mano. Pero si alargas la mano, en seguida sale un guardia. Estás en casa, miras la calle desde el cristal de la ventana y dices: \"Me voy. Hay muchas cosas ahí fuera. Ya saldrá algo. Hay que vivir\". Pero luego, en la calle se te pasa el tiempo mirando escaparates, o siguiendo a una mujer. Cuando te quieres dar cuenta, todos se han ido a sus casas y estás solo en la calle, lleno de frío y con las manos en los bolsillos. Pero uno no quiere irse a casa.",
+  autor: "Francisco Umbral",
+  obra: "Balada de gamberros",
+  temas: ["Soledad", "Vida", "Desilusión"]
+},
+{
+  texto: "Vas a llegar a eso que llaman la mayoría de edad virgen y mártir",
+  autor: "Francisco Umbral",
+  obra: "Balada de gamberros",
+  temas: ["Juventud", "Destino", "Ironía"]
 }
 ];
 
@@ -743,6 +780,7 @@ function mostrarMinijuegos() {
 // INICIO AUTOMÁTICO
 // ===========================
 document.addEventListener("DOMContentLoaded", mostrarInicio);
+
 
 
 
