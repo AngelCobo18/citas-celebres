@@ -270,7 +270,7 @@ const citas = [
 }, 
     // --------------------- FRANCISCO UMBRAL ---------------------
 {
-  texto: "¿Qué sería de los niños sin la desobediencia?",
+  texto: "¿Qué sería de los niños sin la desobediencia? (Jean Cocteau)",
   autor: "Francisco Umbral",
   obra: "Memorias de un niño de derechas",
   temas: ["Infancia", "Libertad", "Identidad"]
@@ -294,31 +294,31 @@ const citas = [
   temas: ["Recuerdo", "Pasado", "Tristeza"]
 },
 {
-  texto: "los vencedores asimilan la cultura de los vencidos, desfigurándola y trivializándola inevitablemente.",
+  texto: "Los vencedores asimilan la cultura de los vencidos, desfigurándola y trivializándola inevitablemente.",
   autor: "Francisco Umbral",
   obra: "Memorias de un niño de derechas",
   temas: ["Poder", "Sociedad", "Conflicto"]
 },
 {
-  texto: "el azar y la necesidad lo rigen todo en los destinos humanos",
+  texto: "El azar y la necesidad lo rigen todo en los destinos humanos.",
   autor: "Francisco Umbral",
   obra: "Memorias de un niño de derechas",
   temas: ["Destino", "Existencia", "Vida"]
 },
 {
-  texto: "Más vale honra sin barcos que barcos sin honra",
+  texto: "Más vale honra sin barcos que barcos sin honra. (Casto Méndez Núñez)",
   autor: "Francisco Umbral",
   obra: "Memorias de un niño de derechas",
   temas: ["Identidad", "Honor", "Valor"]
 },
 {
-  texto: "entre la Justicia y mi madre prefiero a mi madre",
+  texto: "Entre la Justicia y mi madre prefiero a mi madre. (Atribuida a Albert Camus)",
   autor: "Francisco Umbral",
   obra: "Memorias de un niño de derechas",
   temas: ["Conflicto", "Familia", "Lealtad"]
 },
 {
-  texto: "El destino del cuerpo era otro cuerpo",
+  texto: "El destino del cuerpo era otro cuerpo.",
   autor: "Francisco Umbral",
   obra: "Memorias de un niño de derechas",
   temas: ["Deseo", "Cuerpo", "Sexo"]
@@ -348,7 +348,7 @@ const citas = [
   temas: ["Identidad", "Sociedad", "Realidad"]
 },
 {
-  texto: "la resignación es una forma última y menor de la libertad.",
+  texto: "La resignación es una forma última y menor de la libertad.",
   autor: "Francisco Umbral",
   obra: "Memorias de un niño de derechas",
   temas: ["Libertad", "Desesperación", "Vida"]
@@ -372,19 +372,19 @@ const citas = [
   temas: ["Identidad", "Poder", "Ironía"]
 },
 {
-  texto: "el recordar es volver a vivir",
+  texto: "El recordar es volver a vivir.",
   autor: "Francisco Umbral",
   obra: "Memorias de un niño de derechas",
   temas: ["Recuerdo", "Vida", "Memoria"]
 },
 {
-  texto: "Y a se sabe que son esos libros que el niño lee a escondidas los que verdaderamente le forman, los que echan las bases de su cultura, que será así, siempre, una cultura de orígenes clandestinos, de cimientos contradictorios, incapaces de soportar las nociones oficiales y burguesas, tradicionales, asépticas, que vendrán después.",
+  texto: "Ya se sabe que son esos libros que el niño lee a escondidas los que verdaderamente le forman, los que echan las bases de su cultura, que será así, siempre, una cultura de orígenes clandestinos, de cimientos contradictorios, incapaces de soportar las nociones oficiales y burguesas, tradicionales, asépticas, que vendrán después.",
   autor: "Francisco Umbral",
   obra: "Memorias de un niño de derechas",
   temas: ["Infancia", "Literatura", "Identidad"]
 },
 {
-  texto: "el deseado o la deseada no pueden dejar de participar, involuntariamente, de la condición, el pecado, el deseo y la fiebre que les asigna el deseador.",
+  texto: "El deseado o la deseada no pueden dejar de participar, involuntariamente, de la condición, el pecado, el deseo y la fiebre que les asigna el deseador.",
   autor: "Francisco Umbral",
   obra: "Memorias de un niño de derechas",
   temas: ["Deseo", "Pasión", "Erotismo"]
@@ -396,7 +396,7 @@ const citas = [
   temas: ["Infancia", "Vida", "Identidad"]
 },
 {
-  texto: "Una educación burguesa de derechas es una educación que no llega nunca a resolver dos problemas fundamentales, el del sexo y el del dinero.",
+  texto: "Una educación burguesa de derechas es una educación que no llega nunca a resolver dos problemas fundamentales, el del sexo y el del dinero. Se trata de un doble tabú que ese tipo de educación trata de ignorar, de obviar, y entonces, a fuerza de querer hacer inexistente la relación sexual o la relación monetaria (por meras razones de hipocresía moral) lo que se consigue es tornar esas relaciones profundamente inmorales.",
   autor: "Francisco Umbral",
   obra: "Memorias de un niño de derechas",
   temas: ["Sociedad", "Sexo", "Hipocresía"]
@@ -414,19 +414,13 @@ const citas = [
   temas: ["Identidad", "Sexo", "Vida"]
 },
 {
-  texto: "La diferencia entre el erotismo y la picardía puede que sea ésa: el erotismo es el sexo como desafío y la picardía era el sexo como culpabilidad.",
+  texto: "La diferencia entre el erotismo y la picardía puede que sea esa: el erotismo es el sexo como desafío y la picardía era el sexo como culpabilidad.",
   autor: "Francisco Umbral",
   obra: "Memorias de un niño de derechas",
   temas: ["Erotismo", "Sexo", "Dualidad"]
 },
 {
-  texto: "este país podíamos arreglarlo poniendo a todo el mundo un poco más abajo de donde está.",
-  autor: "Francisco Umbral",
-  obra: "Memorias de un niño de derechas",
-  temas: ["Ironía", "Sociedad", "Poder"]
-},
-{
-  texto: "No queremos un país lleno de pisapapeles",
+  texto: "No queremos un país lleno de pisapapeles. (Atribuida a Eugenio D'Ors)",
   autor: "Francisco Umbral",
   obra: "Memorias de un niño de derechas",
   temas: ["Sociedad", "Identidad", "Crítica"]
@@ -749,6 +743,7 @@ function mostrarMinijuegos() {
 // INICIO AUTOMÁTICO
 // ===========================
 document.addEventListener("DOMContentLoaded", mostrarInicio);
+
 
 
 
